@@ -1,6 +1,6 @@
 class Cowsay
-	def say
-		IO.popen(["cowsay", "Hello!"]) do |process|
+	def say(message = "Hello!")
+		IO.popen(["cowsay", message]) do |process|
 			process.read.gsub(/\s*$/, '')
 		end.strip
 	end
